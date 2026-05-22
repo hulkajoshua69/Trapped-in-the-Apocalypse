@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trapped in the Apocalypse | Official Headquarters</title>
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='white' stroke='black' stroke-width='5'/><path d='M25 25 L75 75 M75 25 L25 75' stroke='black' stroke-width='8'/></svg>">
+    
+    <!-- Favicon updated to your SVG emblem -->
+    <link rel="icon" type="image/svg+xml" href="assets/emblem-white.svg">
+    
     <!-- Tailwind CSS for rapid, responsive styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -72,9 +74,8 @@
     <main class="relative min-h-[90vh] flex flex-col items-center justify-center px-6 py-20 z-10">
         <div class="text-center w-full max-w-4xl mx-auto flex flex-col items-center mt-[-5vh]">
             
-            <!-- Band Logo (Using the white version for contrast) -->
-            <!-- Ensure "Asset 2.png" is in the exact same folder as this index.html file -->
-            <img src="Asset 2.png" alt="Trapped in the Apocalypse Logo" class="w-full max-w-2xl mb-10 logo-glow">
+            <!-- Band Logo (Updated to point to your new SVG in the assets folder) -->
+            <img src="assets/main-logo-white.svg" onerror="this.onerror=null; this.src='assets/main-logo-white.png';" alt="Trapped in the Apocalypse Logo" class="w-full max-w-2xl mb-10 logo-glow">
             
             <p class="text-lg md:text-xl text-neutral-400 max-w-xl mx-auto mb-10 lowercase tracking-widest font-mono">
                 first transmission active. <br>stay tuned for further deployment orders.
@@ -132,6 +133,9 @@
             -->
             <form action="https://trappedintheapocalypse.us22.list-manage.com/subscribe/post?u=c0db3e555bfc29239a39eb30a&amp;id=f477302a9d&amp;f_id=00a9c2e1f0" method="POST" target="_blank" class="flex flex-col md:flex-row gap-4 justify-center items-center w-full">
                 
+                <!-- Anti-bot protection field (Crucial for Mailchimp) -->
+                <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_c0db3e555bfc29239a39eb30a_f477302a9d" tabindex="-1" value=""></div>
+
                 <!-- Mailchimp Email Field -->
                 <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="ENTER YOUR EMAIL..." required class="bg-black border border-neutral-700 text-white px-6 py-4 focus:outline-none focus:border-[#8b7355] transition-colors w-full md:flex-1 max-w-md font-mono text-sm tracking-widest">
                 
