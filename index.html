@@ -19,26 +19,30 @@
             overflow-x: hidden; 
         }
         
-        /* Emergency Marquee Styles */
+        /* Seamless Infinite Marquee Styles */
         .marquee {
-            white-space: nowrap;
+            display: flex;
             overflow: hidden;
+            white-space: nowrap;
             background: #8b7355; /* Oil-rubbed bronze accent */
             color: #161616;
             padding: 12px 0;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.15em;
+            user-select: none;
         }
         
         .marquee-content {
+            flex-shrink: 0;
             display: inline-block;
-            animation: marquee 25s linear infinite;
+            min-width: 100%;
+            animation: marquee 30s linear infinite;
         }
 
         @keyframes marquee {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(-50%, 0); }
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
         }
 
         /* Subtle Gritty Background Texture */
@@ -65,8 +69,13 @@
 
     <!-- Emergency Broadcast Marquee (Sticky to stay at top when scrolling) -->
     <div class="sticky top-0 z-50 marquee border-b-2 border-black shadow-2xl">
+        <!-- Element 1 -->
         <div class="marquee-content">
-            FIRST TRANSMISSION LIVE // AWAITING FURTHER SIGNALS // JOIN THE RESISTANCE // FIRST TRANSMISSION LIVE // AWAITING FURTHER SIGNALS // JOIN THE RESISTANCE // FIRST TRANSMISSION LIVE // AWAITING FURTHER SIGNALS // JOIN THE RESISTANCE // 
+            FIRST TRANSMISSION LIVE // AWAITING FURTHER SIGNALS // JOIN THE RESISTANCE // FIRST TRANSMISSION LIVE // AWAITING FURTHER SIGNALS // JOIN THE RESISTANCE // FIRST TRANSMISSION LIVE // AWAITING FURTHER SIGNALS // JOIN THE RESISTANCE // &nbsp;
+        </div>
+        <!-- Element 2 (Identical Twin) -->
+        <div class="marquee-content" aria-hidden="true">
+            FIRST TRANSMISSION LIVE // AWAITING FURTHER SIGNALS // JOIN THE RESISTANCE // FIRST TRANSMISSION LIVE // AWAITING FURTHER SIGNALS // JOIN THE RESISTANCE // FIRST TRANSMISSION LIVE // AWAITING FURTHER SIGNALS // JOIN THE RESISTANCE // &nbsp;
         </div>
     </div>
 
