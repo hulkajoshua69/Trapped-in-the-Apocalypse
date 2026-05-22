@@ -21,10 +21,9 @@
         
         /* Seamless Infinite Marquee Styles */
         .marquee {
-            display: flex;
             overflow: hidden;
-            white-space: nowrap;
-            background: #8b7355; /* Oil-rubbed bronze accent */
+            width: 100%;
+            background: #8b7355; /* Oil-rubbed bronze/Dust Brown accent */
             color: #161616;
             padding: 12px 0;
             font-weight: 900;
@@ -32,17 +31,26 @@
             letter-spacing: 0.15em;
             user-select: none;
         }
+
+        /* The container track that holds both identical spans */
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: scroll-marquee 30s linear infinite;
+        }
         
+        /* Individual text blocks */
         .marquee-content {
             flex-shrink: 0;
-            display: inline-block;
-            min-width: 100%;
-            animation: marquee 30s linear infinite;
+            padding-right: 2rem; /* Equal, clean spacing gap between loops */
         }
 
-        @keyframes marquee {
+        /* By translating exactly -50% of the entire track's width, 
+           we perfectly loop the first half of the track to the second identical half.
+        */
+        @keyframes scroll-marquee {
             0% { transform: translate3d(0, 0, 0); }
-            100% { transform: translate3d(-100%, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
         }
 
         /* Subtle Gritty Background Texture */
@@ -69,13 +77,15 @@
 
     <!-- Emergency Broadcast Marquee (Sticky to stay at top when scrolling) -->
     <div class="sticky top-0 z-50 marquee border-b-2 border-black shadow-2xl">
-        <!-- Element 1 -->
-        <div class="marquee-content">
-            FIRST TRANSMISSION LIVE // AWAITING FURTHER SIGNALS // JOIN THE RESISTANCE // FIRST TRANSMISSION LIVE // AWAITING FURTHER SIGNALS // JOIN THE RESISTANCE // FIRST TRANSMISSION LIVE // AWAITING FURTHER SIGNALS // JOIN THE RESISTANCE // &nbsp;
-        </div>
-        <!-- Element 2 (Identical Twin) -->
-        <div class="marquee-content" aria-hidden="true">
-            FIRST TRANSMISSION LIVE // AWAITING FURTHER SIGNALS // JOIN THE RESISTANCE // FIRST TRANSMISSION LIVE // AWAITING FURTHER SIGNALS // JOIN THE RESISTANCE // FIRST TRANSMISSION LIVE // AWAITING FURTHER SIGNALS // JOIN THE RESISTANCE // &nbsp;
+        <div class="marquee-track">
+            <!-- Block 1 -->
+            <div class="marquee-content">
+                FIRST TRANSMISSION LIVE // AWAITING FURTHER SIGNALS // JOIN THE RESISTANCE // FIRST TRANSMISSION LIVE // AWAITING FURTHER SIGNALS // JOIN THE RESISTANCE // FIRST TRANSMISSION LIVE // AWAITING FURTHER SIGNALS // JOIN THE RESISTANCE // &nbsp;
+            </div>
+            <!-- Block 2 (Exact Duplicate) -->
+            <div class="marquee-content" aria-hidden="true">
+                FIRST TRANSMISSION LIVE // AWAITING FURTHER SIGNALS // JOIN THE RESISTANCE // FIRST TRANSMISSION LIVE // AWAITING FURTHER SIGNALS // JOIN THE RESISTANCE // FIRST TRANSMISSION LIVE // AWAITING FURTHER SIGNALS // JOIN THE RESISTANCE // &nbsp;
+            </div>
         </div>
     </div>
 
