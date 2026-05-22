@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trapped in the Apocalypse | Official Headquarters</title>
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='white' stroke='black' stroke-width='5'/><path d='M25 25 L75 75 M75 25 L25 75' stroke='black' stroke-width='8'/></svg>">
+    <!-- Tailwind CSS for rapid, responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Faded Black & Typography */
+        body { 
+            background-color: #161616; /* Oil-Rubbed Charcoal */
+            color: #e5e5e5; 
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            overflow-x: hidden; 
+        }
+        
+        /* Emergency Marquee Styles */
+        .marquee {
+            white-space: nowrap;
+            overflow: hidden;
+            background: #8b7355; /* Oil-rubbed bronze accent */
+            color: #161616;
+            padding: 12px 0;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+        
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 25s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-50%, 0); }
+        }
+
+        /* Subtle Gritty Background Texture */
+        .noise-overlay {
+            background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+            opacity: 0.20;
+        }
+
+        /* Section dividers to give an industrial feel */
+        .section-border {
+            border-top: 1px solid rgba(139, 115, 85, 0.2);
+        }
+
+        /* Custom glow for the logo to separate it from the background */
+        .logo-glow {
+            filter: drop-shadow(0px 10px 25px rgba(0, 0, 0, 0.9)) drop-shadow(0px 0px 40px rgba(139, 115, 85, 0.1));
+        }
+    </style>
+</head>
+<body class="relative min-h-screen flex flex-col selection:bg-[#8b7355] selection:text-[#161616]">
+
+    <!-- Noise Texture Overlay -->
+    <div class="fixed inset-0 pointer-events-none noise-overlay z-0"></div>
+
+    <!-- Emergency Broadcast Marquee (Sticky to stay at top when scrolling) -->
+    <div class="sticky top-0 z-50 marquee border-b-2 border-black shadow-2xl">
+        <div class="marquee-content">
+            FIRST TRANSMISSION LIVE // AWAITING FURTHER SIGNALS // JOIN THE RESISTANCE // FIRST TRANSMISSION LIVE // AWAITING FURTHER SIGNALS // JOIN THE RESISTANCE // FIRST TRANSMISSION LIVE // AWAITING FURTHER SIGNALS // JOIN THE RESISTANCE // 
+        </div>
+    </div>
+
+    <!-- Main Hero Section -->
+    <main class="relative min-h-[90vh] flex flex-col items-center justify-center px-6 py-20 z-10">
+        <div class="text-center w-full max-w-4xl mx-auto flex flex-col items-center mt-[-5vh]">
+            
+            <!-- Band Logo (Using the white version for contrast) -->
+            <!-- Ensure "Asset 2.png" is in the exact same folder as this index.html file -->
+            <img src="Asset 2.png" alt="Trapped in the Apocalypse Logo" class="w-full max-w-2xl mb-10 logo-glow">
+            
+            <p class="text-lg md:text-xl text-neutral-400 max-w-xl mx-auto mb-10 lowercase tracking-widest font-mono">
+                first transmission active. <br>stay tuned for further deployment orders.
+            </p>
+            
+            <!-- Action Button that smooth scrolls to the Spotify player -->
+            <a href="#transmissions" class="inline-block bg-[#8b7355] text-[#161616] px-10 py-5 font-bold uppercase tracking-widest hover:bg-white transition-colors duration-300 shadow-[0_0_20px_rgba(139,115,85,0.4)]">
+                Access Transmission
+            </a>
+        </div>
+    </main>
+
+    <!-- Transmissions Section (Spotify Embed) -->
+    <!-- Using #121212 for a slightly darker matte background to create visual separation -->
+    <section id="transmissions" class="relative z-10 px-6 py-24 section-border bg-[#121212]">
+        <div class="max-w-3xl mx-auto text-center">
+            
+            <h2 class="text-2xl md:text-4xl font-black uppercase tracking-widest text-[#8b7355] mb-4">
+                Transmissions
+            </h2>
+            <p class="text-neutral-500 mb-12 font-mono text-sm tracking-wider uppercase">
+                // Decrypting audio files... //
+            </p>
+
+            <!-- Spotify Player Wrapper -->
+            <div class="p-2 border border-[#8b7355]/20 rounded-2xl shadow-2xl bg-black/60 backdrop-blur-sm mb-8">
+                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/73ylorfHNUlMCWPkvSoZjF?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+
+            <!-- External Link -->
+            <a href="https://open.spotify.com/artist/73ylorfHNUlMCWPkvSoZjF?si=ozSNA93dTHOnk44pvCPe4Q" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-[#8b7355] transition-colors uppercase tracking-widest font-bold">
+                Open in Spotify 
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                    <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                </svg>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Comms / Newsletter Section -->
+    <section id="comms" class="relative z-10 px-6 py-24 section-border">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-2xl md:text-4xl font-black uppercase tracking-widest text-[#8b7355] mb-6">
+                Join the Resistance
+            </h2>
+            <p class="text-neutral-400 mb-10 text-lg">
+                The apocalypse is expanding. Enter your coordinates to receive early warnings for new music, drops, and future live operations.
+            </p>
+            
+            <!-- 
+                Form integrated with Mailchimp backend. 
+                Action URL and field names (EMAIL and MMERGE8) match your account settings.
+            -->
+            <form action="https://trappedintheapocalypse.us22.list-manage.com/subscribe/post?u=c0db3e555bfc29239a39eb30a&amp;id=f477302a9d&amp;f_id=00a9c2e1f0" method="POST" target="_blank" class="flex flex-col md:flex-row gap-4 justify-center items-center w-full">
+                
+                <!-- Mailchimp Email Field -->
+                <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="ENTER YOUR EMAIL..." required class="bg-black border border-neutral-700 text-white px-6 py-4 focus:outline-none focus:border-[#8b7355] transition-colors w-full md:flex-1 max-w-md font-mono text-sm tracking-widest">
+                
+                <!-- Mailchimp Zip Code Field (MMERGE8) -->
+                <input type="text" name="MMERGE8" id="mce-MMERGE8" placeholder="ZIP CODE..." required class="bg-black border border-neutral-700 text-white px-6 py-4 focus:outline-none focus:border-[#8b7355] transition-colors w-full md:w-56 font-mono text-sm tracking-widest">
+                
+                <button type="submit" name="subscribe" class="bg-neutral-800 border border-neutral-800 text-[#8b7355] px-8 py-4 font-bold uppercase tracking-widest hover:bg-[#8b7355] hover:text-[#161616] transition-colors w-full md:w-auto">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-10 py-8 border-t border-black bg-black text-center text-xs text-neutral-600 font-mono uppercase tracking-widest">
+        <p>&copy; 2026 Trapped in the Apocalypse. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
