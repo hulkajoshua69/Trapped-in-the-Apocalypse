@@ -64,9 +64,55 @@
             border-top: 1px solid rgba(139, 115, 85, 0.2);
         }
 
-        /* Custom glow for the logo to separate it from the background */
+        /* Dynamic Cinematic Ember Glow Animation 
+           Creates an organic, flickering hot heatwave backdrop using brand hexes:
+           Kerosene Amber (#B38A51) and Burned Copper (#683F39)
+        */
         .logo-glow {
-            filter: drop-shadow(0px 10px 25px rgba(0, 0, 0, 0.9)) drop-shadow(0px 0px 40px rgba(139, 115, 85, 0.1));
+            animation: ember-flicker 6s infinite alternate ease-in-out;
+        }
+
+        @keyframes ember-flicker {
+            0% {
+                filter: drop-shadow(0 0 12px rgba(104, 63, 57, 0.45)) 
+                        drop-shadow(0 0 24px rgba(179, 138, 81, 0.25))
+                        drop-shadow(0 0 4px rgba(229, 229, 229, 0.1));
+            }
+            15% {
+                filter: drop-shadow(0 0 15px rgba(104, 63, 57, 0.6)) 
+                        drop-shadow(0 0 35px rgba(179, 138, 81, 0.35))
+                        drop-shadow(0 0 5px rgba(229, 229, 229, 0.15));
+            }
+            30% {
+                filter: drop-shadow(0 0 10px rgba(104, 63, 57, 0.4)) 
+                        drop-shadow(0 0 20px rgba(179, 138, 81, 0.2))
+                        drop-shadow(0 0 3px rgba(229, 229, 229, 0.05));
+            }
+            45% {
+                filter: drop-shadow(0 0 18px rgba(104, 63, 57, 0.7)) 
+                        drop-shadow(0 0 45px rgba(179, 138, 81, 0.45))
+                        drop-shadow(0 0 6px rgba(179, 138, 81, 0.2));
+            }
+            60% {
+                filter: drop-shadow(0 0 12px rgba(104, 63, 57, 0.5)) 
+                        drop-shadow(0 0 30px rgba(179, 138, 81, 0.3))
+                        drop-shadow(0 0 4px rgba(229, 229, 229, 0.1));
+            }
+            75% {
+                filter: drop-shadow(0 0 22px rgba(104, 63, 57, 0.8)) 
+                        drop-shadow(0 0 55px rgba(179, 138, 81, 0.55))
+                        drop-shadow(0 0 8px rgba(179, 138, 81, 0.25));
+            }
+            90% {
+                filter: drop-shadow(0 0 14px rgba(104, 63, 57, 0.55)) 
+                        drop-shadow(0 0 28px rgba(179, 138, 81, 0.25))
+                        drop-shadow(0 0 4px rgba(229, 229, 229, 0.08));
+            }
+            100% {
+                filter: drop-shadow(0 0 20px rgba(104, 63, 57, 0.75)) 
+                        drop-shadow(0 0 50px rgba(179, 138, 81, 0.5))
+                        drop-shadow(0 0 7px rgba(229, 229, 229, 0.15));
+            }
         }
     </style>
 </head>
@@ -93,7 +139,7 @@
     <main class="relative min-h-[90vh] flex flex-col items-center justify-center px-6 py-20 z-10">
         <div class="text-center w-full max-w-4xl mx-auto flex flex-col items-center mt-[-5vh]">
             
-            <!-- Band Logo (Updated to point to your new SVG in the assets folder) -->
+            <!-- Band Logo (Animated with our multi-layered organic ember glow) -->
             <img src="assets/main-logo-white.svg" onerror="this.onerror=null; this.src='assets/main-logo-white.png';" alt="Trapped in the Apocalypse Logo" class="w-full max-w-2xl mb-10 logo-glow">
             
             <p class="text-lg md:text-xl text-neutral-400 max-w-xl mx-auto mb-10 lowercase tracking-widest font-mono">
