@@ -59,6 +59,16 @@
             opacity: 0.20;
         }
 
+        /* Scanline Overlay Effect */
+        .scanlines {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 4px, 3px 100%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
         /* Section dividers to give an industrial feel */
         .section-border {
             border-top: 1px solid rgba(139, 115, 85, 0.2);
@@ -117,6 +127,9 @@
     </style>
 </head>
 <body class="relative min-h-screen flex flex-col selection:bg-[#8b7355] selection:text-[#161616]">
+
+    <!-- Scanline Texture -->
+    <div class="scanlines"></div>
 
     <!-- Noise Texture Overlay -->
     <div class="fixed inset-0 pointer-events-none noise-overlay z-0"></div>
