@@ -110,4 +110,16 @@ body {
                 drop-shadow(0 0 50px rgba(179, 138, 81, 0.5))
                 drop-shadow(0 0 7px rgba(229, 229, 229, 0.15));
     }
+    /* Scroll Reveal Hidden State */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Scroll Reveal Active State */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
 }
