@@ -1,0 +1,113 @@
+/* Custom Faded Black & Typography */
+body { 
+    background-color: #161616; /* Oil-Rubbed Charcoal */
+    color: #e5e5e5; 
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden; 
+}
+
+/* Seamless Infinite Marquee Styles */
+.marquee {
+    overflow: hidden;
+    width: 100%;
+    background: #8b7355; /* Oil-rubbed bronze/Dust Brown accent */
+    color: #161616;
+    padding: 12px 0;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    user-select: none;
+}
+
+/* The container track that holds both identical spans */
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: scroll-marquee 30s linear infinite;
+}
+
+/* Individual text blocks */
+.marquee-content {
+    flex-shrink: 0;
+    padding-right: 2rem; /* Equal, clean spacing gap between loops */
+}
+
+/* By translating exactly -50% of the entire track's width, 
+    we perfectly loop the first half of the track to the second identical half.
+*/
+@keyframes scroll-marquee {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+}
+
+/* Subtle Gritty Background Texture */
+.noise-overlay {
+    background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+    opacity: 0.20;
+}
+
+/* Scanline Overlay Effect */
+.scanlines {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 4px, 3px 100%;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* Section dividers to give an industrial feel */
+.section-border {
+    border-top: 1px solid rgba(139, 115, 85, 0.2);
+}
+
+/* Dynamic Cinematic Ember Glow Animation 
+    Creates an organic, flickering hot heatwave backdrop using brand hexes:
+    Kerosene Amber (#B38A51) and Burned Copper (#683F39)
+*/
+.logo-glow {
+    animation: ember-flicker 6s infinite alternate ease-in-out;
+}
+
+@keyframes ember-flicker {
+    0% {
+        filter: drop-shadow(0 0 12px rgba(104, 63, 57, 0.45)) 
+                drop-shadow(0 0 24px rgba(179, 138, 81, 0.25))
+                drop-shadow(0 0 4px rgba(229, 229, 229, 0.1));
+    }
+    15% {
+        filter: drop-shadow(0 0 15px rgba(104, 63, 57, 0.6)) 
+                drop-shadow(0 0 35px rgba(179, 138, 81, 0.35))
+                drop-shadow(0 0 5px rgba(229, 229, 229, 0.15));
+    }
+    30% {
+        filter: drop-shadow(0 0 10px rgba(104, 63, 57, 0.4)) 
+                drop-shadow(0 0 20px rgba(179, 138, 81, 0.2))
+                drop-shadow(0 0 3px rgba(229, 229, 229, 0.05));
+    }
+    45% {
+        filter: drop-shadow(0 0 18px rgba(104, 63, 57, 0.7)) 
+                drop-shadow(0 0 45px rgba(179, 138, 81, 0.45))
+                drop-shadow(0 0 6px rgba(179, 138, 81, 0.2));
+    }
+    60% {
+        filter: drop-shadow(0 0 12px rgba(104, 63, 57, 0.5)) 
+                drop-shadow(0 0 30px rgba(179, 138, 81, 0.3))
+                drop-shadow(0 0 4px rgba(229, 229, 229, 0.1));
+    }
+    75% {
+        filter: drop-shadow(0 0 22px rgba(104, 63, 57, 0.8)) 
+                drop-shadow(0 0 55px rgba(179, 138, 81, 0.55))
+                drop-shadow(0 0 8px rgba(179, 138, 81, 0.25));
+    }
+    90% {
+        filter: drop-shadow(0 0 14px rgba(104, 63, 57, 0.55)) 
+                drop-shadow(0 0 28px rgba(179, 138, 81, 0.25))
+                drop-shadow(0 0 4px rgba(229, 229, 229, 0.08));
+    }
+    100% {
+        filter: drop-shadow(0 0 20px rgba(104, 63, 57, 0.75)) 
+                drop-shadow(0 0 50px rgba(179, 138, 81, 0.5))
+                drop-shadow(0 0 7px rgba(229, 229, 229, 0.15));
+    }
+}
